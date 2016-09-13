@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import Chef from '../Chef/Chef';
 
-export default class ChefList extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+const ChefList = React.createClass({
+  propTypes: {
+    chefs: PropTypes.array.isRequired,
+    //getChefs: PropTypes.func.isRequired
+  },
 
   componentWillMount (){
     //this.props.getChefs();
-  }
+  },
 
   render() {
     return (
@@ -21,9 +22,6 @@ export default class ChefList extends Component {
       </div>
     );
   }
-}
+});
 
-ChefList.propTypes = {
-  chefs: PropTypes.array.isRequired,
-  //getChefs: PropTypes.func.isRequired
-};
+export default ChefList;
